@@ -1,4 +1,4 @@
-package com.mysite.banzzak;
+package com.mysite.banzzak.back;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

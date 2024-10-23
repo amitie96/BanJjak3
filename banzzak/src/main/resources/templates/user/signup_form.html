@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BanJjak</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+            $("form").on("submit", function(event) {
+                event.preventDefault(); // 기본 제출 이벤트를 방지합니다.
+
+                // 폼이 유효한 경우
+                if ($(this).find("input").val()) {
+                    alert("회원가입이 완료되었습니다!");
+                    this.submit();
+                     window.location.href = "user/login";
+                } else {
+                    // 이 부분은 필요하지 않다고 하셨으니 생략했습니다.
+                }
+            });
+        });
+	</script>
+</head>
+<body>
+<header th:replace="~{layout/header2}"></header>
+		<div>
+			<div class="container">
+				<h4>회원 가입</h4>
+			</div>
+		</div>
+		<div class="ctboxmain">
+		<form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+			<div th:replace="~{form_errors :: formErrorsFragment}"></div>
+			<div>
+				<label for="userId">사용자 ID</label>
+				<input type="text" id="userId" th:field="*{userId}">
+			</div>
+			<div>
+				<label for="userName">이름</label>
+				<input type="text" id="userName" th:field="*{userName}">
+			</div>
+			<div>
+				<label for="nickname">닉네임</label>
+				<input type="text" id="nickname" th:field="*{nickname}">
+			</div>
+			<div>
+				<label for="password1">비밀번호</label>
+				<input type="password" id="password1" th:field="*{password1}">
+			</div>
+			<div>
+				<label for="password2">비밀번호 확인</label>
+				<input type="password" id="password2" th:field="*{password2}">
+			</div>
+			<div>
+				<label for="email">이메일</label>
+				<input type="email" id="email" th:field="*{email}">
+			</div>
+
+			<div class="container">
+				<button type="submit" >
+					<img src="/images/login.png" alt="회원가입" style="paddig:15% 0 15% 0;">
+				</button>
+			</div>
+		</form>
+</div>
+<footer th:replace="~{layout/footer}"></footer>
+</body>
+</html>

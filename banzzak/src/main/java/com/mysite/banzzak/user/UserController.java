@@ -18,7 +18,7 @@ import lombok.RequiredArgsConstructor;
 public class UserController {
 	
 	private final UserService userService;
-	
+
 	@GetMapping("/signup")
 	public String signup(UserCreateForm userCreateForm) {
 		return "user/signup_form";
@@ -45,7 +45,7 @@ public class UserController {
 			return "user/signup_form";
 		}
 		
-		return "redirect:user/login";
+		return "redirect:../user/login";
 	}
 	
 	@GetMapping("/login")

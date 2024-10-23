@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BanJjak</title>
+</head>
+<body>
+<header th:replace="~{layout/header2}"></header>
+<div class="ctbox">
+    <div class="container">
+        <a href="#">
+            <img src="/images/logo.png" alt="반짝뜨개" width="350" height="140">
+        </a>
+    </div>
+
+    <form atcion="#" method="post">
+        <div class="container">
+            <p>아이디</p> <input style="margin-left:13px" ></input>
+        </div>
+        <div class="container">
+            <p>비밀번호</p> <input></input>
+        </div>
+    </form>
+</div>
+<footer th:replace="~{layout/footer}"></footer>
+</body>
+</html>

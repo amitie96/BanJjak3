@@ -17,7 +17,7 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
 	
-	public SiteUser create(Integer user_id, String username, String email, String password, String nickname) {
+	public SiteUser create(String user_id, String username, String email, String password, String nickname) {
 		SiteUser user = new SiteUser();
 		user.setUser_id(user_id);
 		user.setUser_name(username);
@@ -30,8 +30,8 @@ public class UserService {
 		return user;
 	}
 	
-	public SiteUser getUser(String username) {
-		Optional<SiteUser> siteUser = this.userRepository.findByUser_name(username);
+	public SiteUser getUser(String usernumber) {
+		Optional<SiteUser> siteUser = this.userRepository.findByUser_number(usernumber);
 		if(siteUser.isPresent()) {
 			return siteUser.get();
 		} else {

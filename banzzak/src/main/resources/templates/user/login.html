@@ -7,6 +7,7 @@
 </head>
 <body>
 <header th:replace="~{layout/header2}"></header>
+<div class="ctboxmain">
 <div class="ctbox">
     <div class="container">
         <a href="#">
@@ -21,7 +22,14 @@
         <div class="container">
             <p>비밀번호</p> <input></input>
         </div>
+        <br>
+        <div class="container">
+            <button type="submit" >
+                <img src="/images/login.png" alt="로그인" style="paddig:15% 0 15% 0;">
+            </button>
+        </div>
     </form>
+</div>
 </div>
 <footer th:replace="~{layout/footer}"></footer>
 </body>

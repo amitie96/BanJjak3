@@ -15,20 +15,19 @@ public class SiteUser {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer user_number;
+	private Integer userNumber;
 
-	@Column (length = 255 ,unique = true)
-	private String user_id;
+	@Column(length = 255, unique = true)
+	private String userId;
 
-	@Column (length = 50 ,unique = true)
+	@Column(length = 50, unique = true)
 	private String nickname;
 
 	@Column(length = 255)
-	private String user_name;
+	private String userName;
 
 	private String password;
 
 	@Column(length = 100, unique = true)
 	private String email;
-
 }

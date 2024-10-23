@@ -17,10 +17,10 @@ public class UserService {
 	private final UserRepository userRepository;
 	private final PasswordEncoder passwordEncoder;
 	
-	public SiteUser create(String user_id, String username, String email, String password, String nickname) {
+	public SiteUser create(String userId, String userName, String email, String password, String nickname) {
 		SiteUser user = new SiteUser();
-		user.setUser_id(user_id);
-		user.setUser_name(username);
+		user.setUserId(userId);
+		user.setUserName(userName);
 		user.setEmail(email);
 		user.setNickname(nickname);
 		user.setPassword(passwordEncoder.encode(password));
@@ -30,8 +30,8 @@ public class UserService {
 		return user;
 	}
 	
-	public SiteUser getUser(String usernumber) {
-		Optional<SiteUser> siteUser = this.userRepository.findByUser_number(usernumber);
+	public SiteUser getUser(Integer userNumber) {
+		Optional<SiteUser> siteUser = this.userRepository.findByUserNumber(userNumber);
 		if(siteUser.isPresent()) {
 			return siteUser.get();
 		} else {

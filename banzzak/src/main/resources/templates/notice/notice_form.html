@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>notice</title>
+</head>
+<body>
+<header th:replace="~{layout/header}"></header>
+	<h5>공지사항등록</h5>
+	<form th:action="@{/notice/create}" th:object="${noticeForm}" method="post">
+		<!--<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
+		<!--<div th:replace="~{form_errors :: formErrorsFragment}"></div>-->
+		<div role="alert" th:if="${#fields.hasAnyErrors()}">
+			<div th:each="err : ${#fields.allErrors()}" th:text="${err}"/>
+		</div>
+
+		<div>
+			<label for="noticeTitle">제목</label>
+			<input type="text" th:field="*{noticeTitle}" name="noticeTitle" id="noticeTitle">
+		</div>
+		<div>
+			<label for="noticeContent">내용</label>
+			<textarea name="noticeContent" th:field="*{noticeContent}" id="noticeContent"  rows="10"></textarea>
+		</div>
+		<input type="submit" value="저장하기">
+	</form>
+</div>
+<footer th:replace="~{layout/footer}"></footer>
+</body>
+</html>
+

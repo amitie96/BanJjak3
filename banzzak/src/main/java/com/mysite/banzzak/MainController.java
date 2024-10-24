@@ -1,4 +1,4 @@
-package com.mysite.banzzak.back;
+package com.mysite.banzzak;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +15,6 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String root() {
-		return "redirect:/question/list";
+		return "redirect:/main";
 	}
 }

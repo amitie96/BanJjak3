@@ -4,3 +4,47 @@ textarea{
 input[type=submit]{
 	margin-top:10px;
 }
+
+/* 본문 글씨체 */
+body{
+	font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	width: auto;
+	gap: 40px;
+}
+
+.ctbox {
+	padding: 9.5% 0 11% 0;
+}
+
+.ctboxmain {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+.button{
+	border: none;
+	padding: 0;
+	background: none;
+	cursor: pointer;
+}
+
+.button img {
+	display: block; /* 이미지 주변 간격 제거 */
+	transition: transform 0.2s ease, filter 0.2s ease; /* 마우스 오버 시 애니메이션 */
+}
+
+/* 마우스 오버 시 스타일 */
+.button:hover img {
+	transform: scale(1.01);
+	filter: brightness(1.2);
+}

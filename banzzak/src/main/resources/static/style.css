@@ -39,7 +39,7 @@ body{
 }
 
 .button img {
-	display: block; /* 이미지 주변 간격 제거 */
+	display: block;
 	transition: transform 0.2s ease, filter 0.2s ease; /* 마우스 오버 시 애니메이션 */
 }
 

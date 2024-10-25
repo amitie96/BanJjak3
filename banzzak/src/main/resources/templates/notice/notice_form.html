@@ -7,7 +7,7 @@
 </head>
 <body>
 <header th:replace="~{layout/header}"></header>
-	<h5>공지사항등록</h5>
+	<h5>공지사항</h5>
 	<form th:action="@{/notice/create}" th:object="${noticeForm}" method="post">
 		<!--<input th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>-->
 		<!--<div th:replace="~{form_errors :: formErrorsFragment}"></div>-->

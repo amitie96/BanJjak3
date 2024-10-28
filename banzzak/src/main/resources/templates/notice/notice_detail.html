@@ -3,11 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>notice</title>
+  <title>Notice Edit</title>
 </head>
 <body>
 <header th:replace="~{layout/header}"></header>
-
+<div>
+  <form  th:action="@{/notice/detail/{noticeId}(noticeId=${notice.noticeId})}" th:object="${notice}" method="post">
+    <!---->
+    <div class="container">
+      <div>
+        <label for="noticeTitle">제목</label>
+        <input type="text" th:field="*{noticeTitle}" id="noticeTitle" placeholder="제목을 입력하세요" />
+      </div>
+      <div>
+        <label for="noticeContent">내용</label>
+        <textarea th:field="*{noticeContent}" id="noticeContent" rows="10" placeholder="내용을 입력하세요"></textarea>
+      </div>
+      <div class="button-group">
+        <button type="submit" class="button">저장하기</button>
+        <a th:href="@{/notice/list}" class="button">취소</a>
+      </div>
+    </div>
+  </form>
+</div>
 <footer th:replace="~{layout/footer}"></footer>
 </body>
 </html>

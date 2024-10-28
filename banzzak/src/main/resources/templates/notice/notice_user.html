@@ -16,12 +16,14 @@
 	</thead>
 	<tbody>
 		<tr th:each="notice : ${noticeList}">
-			<td th:text="${notice.noticeTitle}"></td>
+			<td >
+				<a th:text="${notice.noticeTitle}" th:href="@{|/notice/detail/${notice.noticeId}}"></a>
+			</td>
 			<td th:text="${notice.noticeDate}"></td>
 		</tr>
 	</tbody>
 </table>
-<a th:href="@{/notice/create}">질문등록하기</a>
+<a th:href="@{/notice/create}">공지등록하기</a>
 <footer th:replace="~{layout/footer}"></footer>
 </body>
 </html>
